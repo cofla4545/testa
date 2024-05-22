@@ -13,6 +13,7 @@ COPY ./requirements.txt* ./
 # 필수 패키지 설치
 RUN apt-get update && apt-get install -y \
     cmake \
+    g++ \
     && rm -rf /var/lib/apt/lists/*
 
 # gunicorn 설치
