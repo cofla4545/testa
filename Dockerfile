@@ -1,4 +1,4 @@
-# 기존 베이스 이미지
+# 베이스 이미지 설정
 FROM cloudtype/python:3.8
 
 # Node.js 및 npm 버전 확인 (이미 캐시됨)
