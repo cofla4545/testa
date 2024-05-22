@@ -1,6 +1,12 @@
 # 베이스 이미지 설정
 FROM cloudtype/python:3.8
 
+# 필수 패키지 설치
+RUN apt-get update && apt-get install -y \
+    cmake \
+    g++ \
+    && rm -rf /var/lib/apt/lists/*
+
 # Node.js 및 npm 버전 확인 (이미 캐시됨)
 RUN node -v && npm -v
 
@@ -9,12 +15,6 @@ WORKDIR /app
 
 # requirements.txt 파일 복사
 COPY ./requirements.txt* ./
-
-# 필수 패키지 설치
-RUN apt-get update && apt-get install -y \
-    cmake \
-    g++ \
-    && rm -rf /var/lib/apt/lists/*
 
 # gunicorn 설치
 RUN pip install gunicorn
