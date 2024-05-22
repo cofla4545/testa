@@ -14,13 +14,13 @@ RUN node -v && npm -v
 WORKDIR /app
 
 # requirements.txt 파일 복사
-COPY ./requirements.txt* ./
+COPY ./requirements.txt ./
 
 # gunicorn 설치
 RUN pip install gunicorn
 
 # requirements.txt 파일에 있는 모든 패키지 설치
-RUN if [ -f "./requirements.txt" ]; then pip install -r requirements.txt; fi
+RUN pip install -r requirements.txt
 
 # 애플리케이션 소스 파일 복사
 COPY . .
