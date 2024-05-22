@@ -1,5 +1,5 @@
 # 베이스 이미지 설정
-FROM cloudtype/python:3.8
+FROM cloudtype/python:3.9
 
 # 필수 패키지 설치
 RUN apt-get update && apt-get install -y \
